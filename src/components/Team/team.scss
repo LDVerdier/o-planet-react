@@ -1,0 +1,15 @@
+.team {
+  
+    &__title {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    &__pic {
+      width: 290px;
+      max-height: 302px;
+      display: block;
+      object-fit: cover;
+    }
+
+}

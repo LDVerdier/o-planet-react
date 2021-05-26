@@ -1,0 +1,76 @@
+@use '../../styles/vars';
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  margin-top: vars.$gutter * 3;
+  align-items: center;
+  position: relative;
+  margin-bottom: vars.$gutter * 4;
+
+  @media (min-width : vars.$large) {
+    flex-direction: row;
+    padding-left: vars.$gutter * 10;
+    margin-bottom: vars.$gutter * 3;
+    width: fit-content;
+  }
+
+  &__bar {
+    height: 100%;
+    width: vars.$gutter;
+    position: absolute;
+    z-index: 2;
+    top: -(vars.$gutter * 3);
+    background-color: vars.$light;
+
+    @media (min-width : vars.$large) {
+      // display: block;
+      
+      left: 0;
+      height: vars.$gutter;
+      top: calc(50% - #{vars.$gutter / 2});
+      width: 100%;
+    }
+
+  }
+
+  &__element {
+    display: none;
+    background-color: vars.$veryDark;
+    color: vars.$light;
+    height: vars.$gutter * 8;
+    width: vars.$gutter * 8;
+    border-radius: vars.$gutter * 4;
+    margin-bottom: vars.$gutter * 4;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: vars.$gutter;
+    font-weight: bold;
+    z-index: 3;
+    -webkit-box-shadow: 3px 2px 5px 0px rgba(0,0,0,0.61); 
+    box-shadow: 3px 2px 5px 0px rgba(0,0,0,0.61);
+
+    @media (min-width : vars.$large) {
+      margin-bottom: 0;
+      margin-right: vars.$gutter * 8;
+
+      &:nth-last-child(1) {
+        margin-right: 0;
+      }
+      
+    }
+
+    &__quantity {
+      font-size: vars.$textStandard * 2;
+    }
+
+    &__name {
+      font-size: vars.$textStandard * 1;
+    }
+  }
+}

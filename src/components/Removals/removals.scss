@@ -1,0 +1,83 @@
+@use '../../styles/vars';
+
+.removals {
+    display: flex;
+    flex-direction: column;
+
+    &__element {
+        min-height: 140px;
+        -webkit-box-shadow: 3px 2px 5px 0px rgba(0,0,0,0.61); 
+        box-shadow: 3px 2px 5px 0px rgba(0,0,0,0.61);
+        margin-bottom: vars.$gutter;
+        padding: vars.$gutter / 2;
+        position: relative;
+
+        &--past {
+            background-color: vars.$light;
+        }
+
+        &__title {
+            margin-bottom: 0;
+        }
+
+        &__meta {
+            font-style: italic;
+        }
+
+        &__cleaned {
+            display: flex;
+            position: absolute;
+            top: vars.$gutter / 2;
+            right: vars.$gutter / 2;
+
+            &__text {
+              display: none;
+              font-style: italic;
+              padding-top: 5px;
+              @media (min-width : vars.$large) {
+                display: block;
+              }
+            }
+            &__icon {
+              height: vars.$gutter * 1.5;
+              margin-left: vars.$gutter * 0.5;
+            }
+        }
+        &__action-group {
+          display: flex;
+          flex-direction: column;
+    
+          @media (min-width : vars.$large) {
+            flex-direction: row;
+          }
+        }
+  
+        &--finished {
+          font-style: italic;
+        }
+    }
+
+
+
+    &__action {
+      font-size: vars.$textStandard * 0.75;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: vars.$gutter * 0.5;
+      width: fit-content;
+
+      @media (min-width : vars.$large) {
+        margin-right: vars.$gutter * 0.5;
+        margin-bottom: 0;
+      }
+
+      &__icon {
+        height: vars.$textStandard;
+        margin-left: vars.$gutter * 0.5;
+        // &.i.icon {
+        //   margin-left: vars.$gutter * 0.5;
+
+        // }
+      }
+    }
+}

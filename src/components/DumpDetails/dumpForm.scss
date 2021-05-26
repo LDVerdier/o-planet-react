@@ -1,0 +1,142 @@
+@use '../../styles/vars';
+
+.dump-form {
+  text-align: left;
+  position: relative;
+  padding: vars.$gutter;
+  width: 100%;
+  box-shadow: vars.$boxShadow;
+  margin: vars.$gutter 0;
+
+  &__return-btn {
+    position: absolute;
+    top: vars.$gutter;
+    right: vars.$gutter;
+  }
+
+  &__field-group {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width : vars.$large) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      &__subgroup {
+        width: 50%;
+        margin-bottom: vars.$gutter;
+        &.subgroup--row {
+          display: flex;
+
+          .dump-form__field {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+
+  &__field {
+    
+    @media (min-width : vars.$large) {
+      margin-right: vars.$gutter;
+    }
+
+    &.form-description {
+      @media (min-width : vars.$large) {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        & #form-description {
+          flex-grow: 2;
+        }
+      }
+    }
+
+    display: flex;
+    flex-direction: column;
+    margin-bottom: vars.$gutter;
+    &__label {
+      margin: 0;
+      font-size: vars.$textStandard;
+      font-weight: bold;
+      margin-bottom: vars.$gutter * 0.5;
+
+      &__legend {
+        font-style: italic;
+        
+        &.map-legend {
+          text-align: center;
+          margin-top: vars.$gutter * 0.5;
+        }
+      }
+    }
+
+    &__selectables {
+
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+
+      &__element {
+        display: flex;
+        align-items: center;
+        margin-bottom: vars.$gutter * 0.25;
+        margin-right: vars.$gutter * 0.25;
+        width: fit-content;
+        &:hover {
+          cursor: pointer;
+        }
+
+        &__image {
+          width: vars.$gutter;
+          margin-left: vars.$gutter * 0.5;
+        }
+      }
+    }
+  }
+
+  &__selectable {
+    &--selected {
+      // background-color: vars.$dark;
+      border: vars.$dark 2px solid;
+    }
+  }
+
+  &__group {
+  text-align: left;
+
+    &__label {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__coordinates {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__submit {
+    width: 100%;
+
+    @media (min-width : vars.$large) {
+      width: calc(50% - #{vars.$gutter * 2});
+      position: absolute;
+      bottom: vars.$gutter * 3;
+      right: vars.$gutter * 2;
+    }
+  }
+}
+
+#form-description {
+  background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+  margin: 0;
+  &:focus {
+    border: 1px solid vars.$dark;
+    outline: none;
+  }
+}

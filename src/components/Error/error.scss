@@ -1,0 +1,52 @@
+@use '../../styles/vars';
+
+.error-page {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  // image
+  background-image: url('../../assets/img/404.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  // flex
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+
+  // text
+  color: vars.$googleCream;
+  text-shadow: 2px 2px 2px black;
+  font-weight: bold;
+
+  // wraps all the text in the middle of the page
+  &__content {
+    // dimensions
+    min-width: 300px;
+    margin: 0 auto;
+    padding: vars.$gutter;
+
+    @media (min-width : vars.$large) {
+      min-width: 1000px;
+    }
+
+    // color
+    background-color: rgba(255,255,255, 0.3);
+
+    &__title {
+      font-size: vars.$textStandard * 2;
+      margin-bottom: vars.$gutter;
+    }
+
+    &__message p {
+      margin-bottom: vars.$gutter / 3;
+      font-size: vars.$textStandard * 0.9;
+    }
+  }
+}

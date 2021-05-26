@@ -1,0 +1,172 @@
+@use '../../styles/vars';
+@use 'sass:color';
+.header {
+
+  width: 100%;
+
+  @media (min-width : vars.$large) {}
+
+  &__top {
+    height: vars.$gutter * 3;
+    padding-left: vars.$gutter / 2;
+    padding-right: vars.$gutter / 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: vars.$light;
+    position: sticky;
+    top: 0;
+    z-index: 1200;
+
+    @media (min-width : vars.$large) {
+      padding-left: vars.$gutter * 10;
+      padding-right: vars.$gutter * 10;
+    }
+
+    &__button {
+      font-size: vars.$textStandard;
+      // font-weight: normal;
+    }
+
+    &__links {
+      font-size: vars.$textStandard;
+      @media (min-width : vars.$large) {
+        display: flex;
+        align-items: center;
+      }
+
+      &__logo {
+        font-family: 'Bowlby One SC', cursive;
+        font-size: vars.$textStandard * 1.25;
+        display: block;
+        margin-right: vars.$gutter;
+        color: vars.$veryDark;
+
+        @media (min-width : vars.$large) {
+          font-size: vars.$textStandard * 2;
+        }
+        
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      &__element {
+        display: none;
+
+        @media (min-width : vars.$large) {
+          display: block;
+          margin-right: vars.$gutter;
+          color: vars.$veryDark;
+
+          &:hover {
+            text-decoration: underline;
+            color: vars.$veryDark;
+          }
+
+          &.selected {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+
+    &__banner {
+      padding: vars.$gutter / 2;
+      background-image: url('../../assets/img/covermobile.png');
+      background-position: right;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+
+      @media (min-width : vars.$large) {
+        background-image: url('../../assets/img/coverDesktop.png');
+        background-position: left;
+        padding-left: vars.$gutter * 10;
+        padding-right: vars.$gutter * 10;
+        justify-content: flex-start;
+      }
+
+      &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        text-align: left;
+
+        &__text {
+          @media (min-width : vars.$large) {
+            min-width: 500px;
+            max-width: 680px;
+          }
+          &__title {
+            color: vars.$light;
+            text-shadow: 0 0 5px vars.$veryDark;
+            font-family: sans-serif;
+
+            font-size: vars.$textStandard * 1.5;
+            text-align: left;
+  
+            @media (min-width : vars.$large) {
+              text-shadow: none;
+              font-size: vars.$textStandard * 3;
+              line-height: vars.$gutter * 3;
+              margin-bottom: vars.$gutter * 3;
+            }
+            // background: rgba(255, 255, 255, 0.623);
+          }
+          &__description {
+            color: vars.$light;
+            font-family: sans-serif;
+            font-size: vars.$textStandard * 0.75;
+            // padding-left: vars.$gutter;
+            padding-right: vars.$gutter * 2;
+            
+            @media (min-width : vars.$large) {
+              // padding-left: vars.$gutter * 4;
+              padding-right: 0;
+              font-size: vars.$textStandard ;
+              text-align: justify;
+            }           
+          }
+        }    
+        &__button {
+          @media (min-width : vars.$large) {
+            // padding-left: vars.$gutter * 4;
+            height: vars.$gutter * 4;
+            font-size: vars.$textStandard ;
+            padding-left: vars.$gutter;
+            padding-right: vars.$gutter;
+          }
+        }
+      }
+    }
+  }
+}
+
+.declare-dump {
+  background-color: vars.$veryDark;
+  color: vars.$light;
+  border-radius: 3px;
+  padding: vars.$gutter * 0.5;
+  font-weight: bold;
+  transition: background-color 0.1s ease;
+  transition: transform 80ms ease-in;
+  &:hover {
+    text-shadow: none;
+    background-color: color.adjust(vars.$veryDark, $lightness: +20%);
+    color: vars.$light;
+  }
+}
+
+.ui.dropdown.btn.login-button {
+  font-size: vars.$textStandard * 0.75;
+  @media (min-width : vars.$small) {
+    font-size: vars.$textStandard;
+  }
+}

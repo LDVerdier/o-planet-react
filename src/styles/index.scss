@@ -1,0 +1,132 @@
+@use 'vars';
+@use 'sass:color';
+
+body {
+  font-family: sans-serif;
+}
+
+input {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+  margin: 8px 0;
+  &:focus {
+    border: 1px solid vars.$dark;
+    outline: none;
+  }
+}
+
+.ui.button.dropdown, .btn {
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  background-color: vars.$veryDark;
+  color: vars.$light;
+  height: vars.$gutter * 2;
+  padding: 0 vars.$gutter * 0.5;
+  transition: background-color 0.1s ease;
+  transition: transform 80ms ease-in;
+
+  &:active {
+    transform: scale(0.95);
+  }
+  &:hover {
+    background-color: color.adjust(vars.$veryDark, $lightness: +20%);
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &-reverse {
+    background-color: vars.$light;
+    color: vars.$veryDark;
+    &:hover {
+      background-color: color.adjust(vars.$light, $lightness: -20%);
+    }
+  }
+  &-dark {
+    background-color: vars.$dark;
+    color: vars.$veryDark;
+    &:hover {
+      background-color: color.adjust(vars.$dark, $lightness: +10%);
+    }
+  }
+  &-danger {
+    background-color: vars.$danger;
+    color: vars.$veryDark;
+    &:hover {
+      background-color: color.adjust(vars.$danger, $lightness: +10%);
+    }
+  }
+  &-warning {
+    background-color: vars.$warning;
+    color: vars.$veryDark;
+    &:hover {
+      background-color: color.adjust(vars.$warning, $lightness: +10%);
+    }
+  }
+  &-info {
+    background-color: vars.$info;
+    color: vars.$veryDark;
+    &:hover {
+      background-color: color.adjust(vars.$info, $lightness: +10%);
+    }
+  }
+  &-success {
+    background-color: vars.$success;
+    color: vars.$veryDark;
+    &:hover {
+      background-color: color.adjust(vars.$success, $lightness: +10%);
+    }
+  }
+}
+
+.badge {
+  background-color: vars.$light;
+  border-radius: 3px;
+  display: block;
+  padding: vars.$gutter * 0.25 vars.$gutter * 0.5;
+  height: vars.$gutter * 1.5;
+  color: vars.$veryDark;
+  font-weight: bold;
+
+  &-warning {
+    background-color: vars.$warning;
+  }
+  &-success {
+    background-color: vars.$success;
+  }
+}
+
+.required::after {
+  content: '*';
+  color: red;
+  margin-left: 5px;
+}
+
+.admin-badge {
+  &::after {
+    content:'admin';
+    color: vars.$veryDark;
+    background-color: vars.$light;
+    border-radius: 7px;
+    padding: 3px 6px;
+    margin-left: 5px;
+    font-weight: bold;
+  }
+
+  &-lg::after {
+    @media (min-width : vars.$large) {
+      content:'admin';
+      color: vars.$veryDark;
+      background-color: vars.$light;
+      border-radius: 7px;
+      padding: 3px 6px;
+      margin-left: 5px;
+      font-weight: bold;
+      font-size: vars.$textStandard * 0.75;
+    }
+  }
+}

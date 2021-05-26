@@ -1,0 +1,25 @@
+@use '../../styles/vars';
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.main {
+  padding-left: vars.$gutter / 2;
+  padding-right: vars.$gutter / 2;
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  @media (min-width : vars.$large) {
+    padding-left: vars.$gutter * 10;
+    padding-right: vars.$gutter * 10;
+  }
+}

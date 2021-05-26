@@ -1,0 +1,42 @@
+[
+  {
+    "id": 42,
+    "title": "Better to remain silent and be thought a fool than to speak out and remove all doubt.",
+    "latitudeCoordinate": 12.3123,
+    "longitudeCoordinate": 12.3123,
+    "picture1": "qdsdqdsqdqs\\dfsqfdqsfsd",
+    "picture2": null,
+    "picture3": null,
+    "description": "Better to remain silent and be thought a fool than to speak out and remove all doubt.",
+    "isClosed": false,
+    "createdAt": "2021-05-07T13:58:19+00:00",
+    "emergency": {
+      "id": 2,
+      "name": "Élevée",
+      "example": "Risque d'empoisonnement des sols"
+    },
+    "wastes": [
+      {
+        "id": 1,
+        "name": "Matériaux de chantier"
+      },
+      {
+        "id": 2,
+        "name": "Produits chimiques"
+      },
+      {
+        "id": 3,
+        "name": "Epave de véhicule"
+      },
+      {
+        "id": 5,
+        "name": "Détritus"
+      }
+    ],
+    "removals": [],
+    "user": {
+      "id": 2,
+      "userAlias": "user2"
+    }
+  }
+]

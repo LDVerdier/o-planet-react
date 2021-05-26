@@ -1,0 +1,52 @@
+@use '../../styles/vars';
+
+.faq {
+
+  width: 100%;
+  text-align: left;
+
+  @media (min-width : vars.$large) {
+    width: 70%;
+  }
+
+  &__title{
+    text-align: center;
+    font-size: vars.$gutter * 2;
+    padding-bottom: vars.$gutter;
+    border-bottom: 1px solid silver;
+    margin-bottom: vars.$gutter * 2;
+    border-image: linear-gradient(to right, transparent 20%, darkslategrey, transparent 80%)30;
+  }
+
+  details{
+    padding-top: vars.$gutter;
+    margin-bottom: vars.$gutter;
+    padding: vars.$gutter;
+    border-radius: 3px;
+    -webkit-box-shadow: 3px 2px 5px 0px rgba(0,0,0,0.61); 
+    box-shadow: 3px 2px 5px 0px rgba(0,0,0,0.61);
+  }
+
+  summary{
+    font-size: vars.$textStandard * 1.25;
+    font-weight: bold;
+    cursor: pointer; 
+    position: relative;
+    outline: none;
+    color: dimgray;
+  }
+
+  details[open] summary{
+  color:black;
+  }
+
+  p{
+    margin-top: 1em;
+    color: dimgrey;
+    font-size: vars.$textStandard * 0.9;
+  }
+
+  a {
+    font-size: vars.$textStandard * 0.9;
+  }
+}

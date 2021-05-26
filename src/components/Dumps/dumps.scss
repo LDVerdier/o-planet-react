@@ -1,0 +1,170 @@
+@use '../../styles/vars';
+
+.dumps {
+  // padding-right: vars.$gutter;
+  // padding-left: vars.$gutter;
+    width: 100%;
+    @media (min-width : vars.$large) {
+    }
+
+    &__title {
+      text-align: left;
+      font-size: vars.$textStandard * 1.5;
+    }
+    &__more-btn {
+      margin-bottom: vars.$gutter;
+      width: 100%;
+    }
+}
+
+.dump {
+  box-shadow: vars.$boxShadow;
+  width: 100%;
+  background-color: white;
+  position: relative;
+  padding: vars.$gutter / 2;
+  margin-bottom: vars.$gutter * 2;
+  cursor: pointer;
+  transition: 
+    transform 80ms ease-in-out,
+    box-shadow 300ms ease-in-out;
+  &:hover {
+    transform: scale(1.01);
+    // box-shadow:7px 6px 7px 0px #8b8b8b;
+  }
+
+  @media (min-width : vars.$large) {
+    display: flex;
+    padding: vars.$gutter;
+  }
+
+  &-success {
+    border-left: vars.$success 3px solid;
+  }
+  &-info {
+    border-left: vars.$info 3px solid;
+  }
+  &-warning {
+    border-left: vars.$warning 3px solid;
+  }
+  &-danger {
+    border-left: vars.$danger 3px solid;
+  }
+
+  &__emergency {
+    width: vars.$gutter * 4;
+    position: absolute;
+    top: vars.$gutter / 4;
+    right: vars.$gutter / 4;
+    @media (min-width : vars.$large) {
+      top: vars.$gutter;
+      right: vars.$gutter;
+    }
+
+  }
+
+  &__picture {
+    display: none;
+    // -webkit-box-shadow: 3px 2px 5px 0px rgba(0,0,0,0.61); 
+    // box-shadow: 3px 2px 5px 0px rgba(0,0,0,0.61);
+
+    @media (min-width : vars.$large) {
+      display: block;
+      width: 250px;
+      height: 170px;
+      object-fit: scale-down;
+      margin-right: vars.$gutter;
+      filter: drop-shadow(3px 2px 4px black)
+    }
+  }
+
+  &__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding-top: vars.$gutter * 2;
+    @media (min-width : vars.$large) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+
+    &__meta {
+      margin-bottom: vars.$gutter;
+      @media (min-width : vars.$large) {
+        margin-bottom: 0;
+        align-self: flex-start;
+      }
+
+      &__badge {
+        margin-bottom: vars.$gutter;
+        position: absolute;
+        left: vars.$gutter / 2;
+        top: vars.$gutter / 2;
+
+        @media (min-width : vars.$large) {
+          left: unset;
+          top: vars.$gutter;
+        }
+      }
+
+      &__title {
+        font-size: vars.$textStandard;
+        font-weight: bold;
+        margin-bottom: vars.$gutter * 0.25;
+      }
+
+      &__publish {
+        font-size: vars.$textStandard * 0.75;
+        font-style: italic;
+
+        @media (min-width : vars.$large) {
+          margin-bottom: vars.$gutter;
+        }
+      }
+      &__description {
+        display: none;
+        @media (min-width : vars.$large) {
+          display: block;
+        }
+
+      }
+    }
+
+    &__separator {
+      height: 2px;
+      background-color: vars.$dark;
+      margin-bottom: vars.$gutter;
+      width: 100%;
+
+      @media (min-width : vars.$large) {
+        display: none;
+      }
+    }
+
+    &__wastes {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: flex-end;
+
+      @media (min-width : vars.$large) {
+        min-width: 50%;
+      }
+
+      &__element {
+        display: flex;
+        align-items: center;
+        margin-bottom: vars.$gutter * 0.25;
+        margin-right: vars.$gutter * 0.25;
+        &__image {
+          width: vars.$gutter;
+          margin-left: vars.$gutter * 0.5;
+        }
+      }
+    }
+  }
+}

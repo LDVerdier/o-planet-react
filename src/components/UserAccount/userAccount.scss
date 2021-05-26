@@ -1,0 +1,75 @@
+@use '../../styles/vars';
+
+.user-modal {
+  &__background {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(50, 50, 50, 0.5);
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__container {
+    position: relative;
+    background-color: white;
+    width: 80vw;
+    max-height: 90vh;
+    padding: vars.$gutter * 2.5 vars.$gutter vars.$gutter;
+    border-radius: 3px;
+    overflow-y: auto;
+
+    @media (min-width : vars.$small) {
+      width: 50vh;
+    }
+
+    &__close-btn {
+      position: absolute;
+      top: vars.$gutter;
+      right: vars.$gutter;
+    }
+  }
+}
+
+.user {
+  text-align: left;
+
+  &__title {
+    font-size: vars.$textStandard * 1.25;
+  }
+
+  &__infos {
+
+
+    margin-bottom: vars.$gutter * 2;
+    &__field {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: vars.$gutter * 0.5;
+
+      &__label {
+        font-weight: bold;
+        font-size: vars.$textStandard * 0.75;
+        margin-bottom: vars.$gutter * 0.25;
+      }
+    }
+  }
+
+  &__actions {
+
+    &__button {
+      width: 100%;
+      &:not(:last-child) {
+        margin-bottom: vars.$gutter * 2;
+      }
+    }
+  }
+}
+
